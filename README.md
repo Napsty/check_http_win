@@ -1,5 +1,5 @@
 # check_http_win
-(Very!) Simple check_http alternative running on Windows hosts
+(Very!) Simple check_http alternative running on Windows hosts. The plugin should run without any additional installations/packages.
 
 Usage 
 ---
