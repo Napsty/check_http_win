@@ -83,7 +83,7 @@ If MyExpectIgnore = 1 Then
 Else 
 ' User expects a certain http status
   If http.Status = MyExpect Then
-    wscript.echo "HTTP OK - " & MyUrl & " returns " & http.Status & "(expected:" & MyExpect & ")"
+	wscript.echo "HTTP OK - " & MyUrl & " returns " & http.Status & " (expected: " & MyExpect & ")"
 	exitCode = 0
   Else 
     wscript.echo "HTTP CRITICAL - " & MyUrl & " returns " & http.Status & " but expected " & MyExpect
