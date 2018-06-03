@@ -1,7 +1,14 @@
 # check_http_win
 (Very!) Simple check_http alternative running on Windows hosts, based on my article on https://www.claudiokuenzler.com/blog/685/simple-http-check-monitoring-plugin-windows-check_http-alternative. The plugin should run without any additional installations/packages.
 
-Usage 
+Usage
+---
+    cscript check_http_win.vbs METHOD URL [EXPECTED_RETURN_CODE] [POSTDATA]
+    
+Important note: If you don't use EXPECTED_RETURN_CODE or POSTDATA, you still need to use empty arguments: ""
+
+
+Examples
 ---
 
     cscript check_http_win.vbs GET https://www.claudiokuenzler.com "" ""
