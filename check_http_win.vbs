@@ -61,10 +61,19 @@ End If
 ' Run the magic
 Set http = CreateObject("MSXML2.ServerXMLHTTP")
 http.open MyMethod,MyUrl,false
+
+' Handle http.send possible connection issues
+On Error Resume Next
 If (MyMethod = "POST") Then
   http.send MyData
 Else
   http.send
+End If
+
+If Left(Err.Description,53) = "A connection with the server could not be established"  Then 
+  wScript.Echo "Error in http.send: " & Err.Description
+  exitCode = 2
+  WScript.Quit(exitCode)
 End If
 
 ' Handle return status
